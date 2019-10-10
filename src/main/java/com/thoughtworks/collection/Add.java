@@ -41,13 +41,7 @@ public class Add {
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
-
-        int sum = 0;
-
-        for (int number:arrayList) {
-            sum += (number*3)+2;
-        }
-        return sum;
+        return arrayList.stream().map(number -> (number*3)+2).reduce((a,b) -> a+b).get();
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
@@ -83,19 +77,8 @@ public class Add {
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
-        int totalEven =0;
-        int countEven =0;
-
-        for (int number: arrayList) {
-            if(number % 2 == 0)
-            {
-                totalEven += number;
-                countEven ++;
-            }
-        }
-
-
-        return totalEven/countEven;
+        List<Integer> finalList = arrayList.stream().filter(number -> number%2 == 0).collect(Collectors.toList());
+        return finalList.stream().reduce((a,b) -> a+b).get()/finalList.size();
 
     }
 
@@ -105,17 +88,7 @@ public class Add {
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        List<Integer> result = new ArrayList<>();
-
-        for (int number: arrayList) {
-
-            if(number % 2 == 0)
-            {
-                result.add(number);
-            }
-        }
-
-        return result;
+        return arrayList.stream().filter(number -> number%2 == 0).collect(Collectors.toList());
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
