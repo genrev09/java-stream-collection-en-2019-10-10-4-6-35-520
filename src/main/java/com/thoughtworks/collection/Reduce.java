@@ -2,7 +2,12 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
 
 public class Reduce {
 
@@ -21,23 +26,32 @@ public class Reduce {
     }
 
     public double getAverage() {
-        return arrayList.stream().reduce((a,b) -> a + b).get()/new Double(arrayList.size());
+        return arrayList.stream().reduce((a,b) -> a + b).get()/ (double) arrayList.size();
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        double medianNumber;
+        DoubleStream sortedNumber = arrayList.stream().mapToDouble(Integer::doubleValue).sorted();
+
+        if (arrayList.size()%2 == 0)
+            return sortedNumber.skip(arrayList.size()/2 - 1).limit(2).average().getAsDouble();
+        else
+            return sortedNumber.skip(arrayList.size()/2).findFirst().getAsDouble();
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        return arrayList.stream().filter(number -> number%2 == 0)
+                                 .reduce((a,b) -> a).get();
     }
 
     public int getIndexOfFirstEven() {
-        throw new NotImplementedException();
+        int firstEven = arrayList.stream().filter(number -> number%2 == 0)
+                                      .reduce((a,b) -> a).get();
+        return arrayList.indexOf(firstEven);
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        return Arrays.equals(this.arrayList.toArray(),arrayList.toArray());
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
@@ -45,10 +59,13 @@ public class Reduce {
     }
 
     public int getLastOdd() {
-        throw new NotImplementedException();
+        return arrayList.stream().filter(number -> number%2 != 0)
+                                 .reduce((a,b) -> b).get();
     }
 
     public int getIndexOfLastOdd() {
-        throw new NotImplementedException();
+        int lastOdd = arrayList.stream().filter(number -> number%2 != 0)
+                                        .reduce((a,b) -> b).get();
+        return arrayList.indexOf(lastOdd);
     }
 }

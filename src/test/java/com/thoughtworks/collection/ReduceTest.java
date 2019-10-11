@@ -43,37 +43,37 @@ public class ReduceTest {
         assertThat(reduce.getAverage()).isEqualTo(48.5);
     }
 
-//    @Test
-//    public void should_get_element_in_middle_position_with_order_elements() {
-//        // Get the array median
-//        Integer[] array = new Integer[]{1, 1, 1, 2, 3};
-//        List<Integer> arrayList = Arrays.asList(array);
-//        Reduce reduce = new Reduce(arrayList);
-//
-//        assertThat(reduce.getOrderedMedian()).isEqualTo(1);
-//
-//
-//        Integer[] evenArray = new Integer[]{1, 1, 2, 3};
-//        List<Integer> EvenArrayList = Arrays.asList(evenArray);
-//        Reduce evenReduce = new Reduce(EvenArrayList);
-//
-//        assertThat(evenReduce.getOrderedMedian()).isEqualTo(1.5);
-//    }
+    @Test
+    public void should_get_element_in_middle_position_with_order_elements() {
+        // Get the array median
+        Integer[] array = new Integer[]{1, 1, 1, 2, 3};
+        List<Integer> arrayList = Arrays.asList(array);
+        Reduce reduce = new Reduce(arrayList);
 
-//    @Test
-//    public void should_get_element_in_middle_position_in_linkList_when_even_size() {
-//        Integer[] array = new Integer[]{1, 4, 6, 2, 3, 10, 9, 8, 11, 2, 19, 30};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        SingleLink<Integer> singleLink = mock(SingleLink.class);
-//        when(singleLink.getNode(6)).thenReturn(10);
-//        when(singleLink.getNode(7)).thenReturn(9);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//
-//        assertThat(reduce.getMedianInLinkList(singleLink)).isEqualTo(9.5);
-//    }
-//
+        assertThat(reduce.getOrderedMedian()).isEqualTo(1);
+
+
+        Integer[] evenArray = new Integer[]{1, 1, 2, 3};
+        List<Integer> EvenArrayList = Arrays.asList(evenArray);
+        Reduce evenReduce = new Reduce(EvenArrayList);
+
+        assertThat(evenReduce.getOrderedMedian()).isEqualTo(1.5);
+    }
+
+    @Test
+    public void should_get_element_in_middle_position_in_linkList_when_even_size() {
+        Integer[] array = new Integer[]{1, 4, 6, 2, 3, 10, 9, 8, 11, 2, 19, 30};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        SingleLink<Integer> singleLink = mock(SingleLink.class);
+        when(singleLink.getNode(6)).thenReturn(10);
+        when(singleLink.getNode(7)).thenReturn(9);
+
+        Reduce reduce = new Reduce(arrayList);
+
+        assertThat(reduce.getMedianInLinkList(singleLink)).isEqualTo(9.5);
+    }
+
 //    @Test
 //    public void should_get_element_in_middle_position_in_linkList_when_odd_size() {
 //        Integer[] array = new Integer[]{1, 4, 6, 2, 3, 10, 9, 8, 11, 2, 19};
@@ -86,57 +86,57 @@ public class ReduceTest {
 //        assertThat(reduce.getMedianInLinkList(singleLink)).isEqualTo(10);
 //    }
 //
-//    @Test
-//    public void should_return_first_even_element() {
-//        //Get the first even number in the array
-//        Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//        assertThat(reduce.getFirstEven()).isEqualTo(20);
-//    }
-//
-//    @Test
-//    public void should_return_index_of_first_even_element() {
-//        //Get the index of the first even number in the array
-//        Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15, 4, 1, 11};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//        assertThat(reduce.getIndexOfFirstEven()).isEqualTo(3);
-//    }
-//
-//    @Test
-//    public void should_return_last_even_element() {
-//        //Get the last odd number in the array
-//        Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//        assertThat(reduce.getLastOdd()).isEqualTo(15);
-//    }
-//
-//    @Test
-//    public void should_return_index_of_last_even_element() {
-//        //Get the last odd number in the array
-//        Integer[] array = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1, 11};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//        assertThat(reduce.getIndexOfLastOdd()).isEqualTo(9);
-//    }
-//
-//    @Test
-//    public void can_judge_whether_is_equal() {
-//        //Determine if two arrays are equal
-//        Integer[] array = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1, 11};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        Integer[] differentArray = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1};
-//        List<Integer> differentArrayList = Arrays.asList(differentArray);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//        assertThat(reduce.isEqual(arrayList)).isEqualTo(true);
-//        assertThat(reduce.isEqual(differentArrayList)).isEqualTo(false);
-//    }
+    @Test
+    public void should_return_first_even_element() {
+        //Get the first even number in the array
+        Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Reduce reduce = new Reduce(arrayList);
+        assertThat(reduce.getFirstEven()).isEqualTo(20);
+    }
+
+    @Test
+    public void should_return_index_of_first_even_element() {
+        //Get the index of the first even number in the array
+        Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15, 4, 1, 11};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Reduce reduce = new Reduce(arrayList);
+        assertThat(reduce.getIndexOfFirstEven()).isEqualTo(3);
+    }
+
+    @Test
+    public void should_return_last_odd_element() {
+        //Get the last odd number in the array
+        Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Reduce reduce = new Reduce(arrayList);
+        assertThat(reduce.getLastOdd()).isEqualTo(15);
+    }
+
+    @Test
+    public void should_return_index_of_last_odd_element() {
+        //Get the last odd number in the array
+        Integer[] array = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1, 11};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Reduce reduce = new Reduce(arrayList);
+        assertThat(reduce.getIndexOfLastOdd()).isEqualTo(9);
+    }
+
+    @Test
+    public void can_judge_whether_is_equal() {
+        //Determine if two arrays are equal
+        Integer[] array = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1, 11};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Integer[] differentArray = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1};
+        List<Integer> differentArrayList = Arrays.asList(differentArray);
+
+        Reduce reduce = new Reduce(arrayList);
+        assertThat(reduce.isEqual(arrayList)).isEqualTo(true);
+        assertThat(reduce.isEqual(differentArrayList)).isEqualTo(false);
+    }
 }

@@ -16,14 +16,9 @@ public class Add {
         int minNum = Math.min(leftBorder,rightBorder);
         int maxNum = Math.max(leftBorder,rightBorder);
 
-
-        int total = 0;
-        int[] range = IntStream.rangeClosed(minNum,maxNum).toArray();
-        for (int number: range) {
-            if(number%2 == 0)
-                total+= number;
-        }
-        return total;
+        IntStream range = IntStream.rangeClosed(minNum,maxNum);
+        return range.filter(number -> number%2 == 0)
+                    .reduce((a,b) -> a+b).getAsInt();
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
@@ -101,6 +96,7 @@ public class Add {
 
         finalList.addAll(evenList);
         finalList.addAll(oddList);
+
 
         return finalList;
     }
