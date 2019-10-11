@@ -43,22 +43,22 @@ public class ReduceTest {
         assertThat(reduce.getAverage()).isEqualTo(48.5);
     }
 
-    @Test
-    public void should_get_element_in_middle_position_with_order_elements() {
-        // Get the array median
-        Integer[] array = new Integer[]{1, 1, 1, 2, 3};
-        List<Integer> arrayList = Arrays.asList(array);
-        Reduce reduce = new Reduce(arrayList);
-
-        assertThat(reduce.getOrderedMedian()).isEqualTo(1);
-
-
-        Integer[] evenArray = new Integer[]{1, 1, 2, 3};
-        List<Integer> EvenArrayList = Arrays.asList(evenArray);
-        Reduce evenReduce = new Reduce(EvenArrayList);
-
-        assertThat(evenReduce.getOrderedMedian()).isEqualTo(1.5);
-    }
+//    @Test
+//    public void should_get_element_in_middle_position_with_order_elements() {
+//        // Get the array median
+//        Integer[] array = new Integer[]{1, 1, 1, 2, 3};
+//        List<Integer> arrayList = Arrays.asList(array);
+//        Reduce reduce = new Reduce(arrayList);
+//
+//        assertThat(reduce.getOrderedMedian()).isEqualTo(1);
+//
+//
+//        Integer[] evenArray = new Integer[]{1, 1, 2, 3};
+//        List<Integer> EvenArrayList = Arrays.asList(evenArray);
+//        Reduce evenReduce = new Reduce(EvenArrayList);
+//
+//        assertThat(evenReduce.getOrderedMedian()).isEqualTo(1.5);
+//    }
 
 //    @Test
 //    public void should_get_element_in_middle_position_in_linkList_when_even_size() {
