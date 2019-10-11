@@ -10,56 +10,56 @@ import static org.mockito.Mockito.*;
 
 public class ReduceTest {
 
-//    @Test
-//    public void should_get_maximum_of_list() {
-//        // Get the maximum value in the array
-//        Integer[] array = new Integer[]{1, 5, 7, 2, 8, 9, 3, 2};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//
-//        assertThat(reduce.getMaximum()).isEqualTo(9);
-//    }
-//
-//    @Test
-//    public void should_get_minimum_of_list() {
-//        //Get the minimum value in the array
-//        Integer[] array = new Integer[]{9, 4, 5, 10, 34, 2, 1, 10, 16};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//
-//        assertThat(reduce.getMinimum()).isEqualTo(1);
-//    }
-//
-//    @Test
-//    public void should_get_average_of_list() {
-//        // Get the average of the array
-//        Integer[] array = new Integer[]{12, 34, 56, 78, 90, 21};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//
-//        assertThat(reduce.getAverage()).isEqualTo(48.5);
-//    }
-//
-//    @Test
-//    public void should_get_element_in_middle_position_with_order_elements() {
-//        // Get the array median
-//        Integer[] array = new Integer[]{1, 1, 1, 2, 3};
-//        List<Integer> arrayList = Arrays.asList(array);
-//        Reduce reduce = new Reduce(arrayList);
-//
-//        assertThat(reduce.getOrderedMedian()).isEqualTo(1);
-//
-//
-//        Integer[] evenArray = new Integer[]{1, 1, 2, 3};
-//        List<Integer> EvenArrayList = Arrays.asList(evenArray);
-//        Reduce evenReduce = new Reduce(EvenArrayList);
-//
-//        assertThat(evenReduce.getOrderedMedian()).isEqualTo(1.5);
-//    }
-//
+    @Test
+    public void should_get_maximum_of_list() {
+        // Get the maximum value in the array
+        Integer[] array = new Integer[]{1, 5, 7, 2, 8, 9, 3, 2};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Reduce reduce = new Reduce(arrayList);
+
+        assertThat(reduce.getMaximum()).isEqualTo(9);
+    }
+
+    @Test
+    public void should_get_minimum_of_list() {
+        //Get the minimum value in the array
+        Integer[] array = new Integer[]{9, 4, 5, 10, 34, 2, 1, 10, 16};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Reduce reduce = new Reduce(arrayList);
+
+        assertThat(reduce.getMinimum()).isEqualTo(1);
+    }
+
+    @Test
+    public void should_get_average_of_list() {
+        // Get the average of the array
+        Integer[] array = new Integer[]{12, 34, 56, 78, 90, 21};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        Reduce reduce = new Reduce(arrayList);
+
+        assertThat(reduce.getAverage()).isEqualTo(48.5);
+    }
+
+    @Test
+    public void should_get_element_in_middle_position_with_order_elements() {
+        // Get the array median
+        Integer[] array = new Integer[]{1, 1, 1, 2, 3};
+        List<Integer> arrayList = Arrays.asList(array);
+        Reduce reduce = new Reduce(arrayList);
+
+        assertThat(reduce.getOrderedMedian()).isEqualTo(1);
+
+
+        Integer[] evenArray = new Integer[]{1, 1, 2, 3};
+        List<Integer> EvenArrayList = Arrays.asList(evenArray);
+        Reduce evenReduce = new Reduce(EvenArrayList);
+
+        assertThat(evenReduce.getOrderedMedian()).isEqualTo(1.5);
+    }
+
 //    @Test
 //    public void should_get_element_in_middle_position_in_linkList_when_even_size() {
 //        Integer[] array = new Integer[]{1, 4, 6, 2, 3, 10, 9, 8, 11, 2, 19, 30};
