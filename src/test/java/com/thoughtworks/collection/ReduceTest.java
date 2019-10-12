@@ -74,18 +74,18 @@ public class ReduceTest {
         assertThat(reduce.getMedianInLinkList(singleLink)).isEqualTo(9.5);
     }
 
-//    @Test
-//    public void should_get_element_in_middle_position_in_linkList_when_odd_size() {
-//        Integer[] array = new Integer[]{1, 4, 6, 2, 3, 10, 9, 8, 11, 2, 19};
-//        List<Integer> arrayList = Arrays.asList(array);
-//
-//        SingleLink<Integer> singleLink = mock(SingleLink.class);
-//        when(singleLink.getNode(6)).thenReturn(10);
-//
-//        Reduce reduce = new Reduce(arrayList);
-//        assertThat(reduce.getMedianInLinkList(singleLink)).isEqualTo(10);
-//    }
-//
+    @Test
+    public void should_get_element_in_middle_position_in_linkList_when_odd_size() {
+        Integer[] array = new Integer[]{1, 4, 6, 2, 3, 10, 9, 8, 11, 2, 19};
+        List<Integer> arrayList = Arrays.asList(array);
+
+        SingleLink<Integer> singleLink = mock(SingleLink.class);
+        when(singleLink.getNode(6)).thenReturn(10);
+
+        Reduce reduce = new Reduce(arrayList);
+        assertThat(reduce.getMedianInLinkList(singleLink)).isEqualTo(10);
+    }
+
     @Test
     public void should_return_first_even_element() {
         //Get the first even number in the array

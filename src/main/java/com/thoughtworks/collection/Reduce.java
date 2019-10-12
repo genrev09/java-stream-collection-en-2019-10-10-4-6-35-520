@@ -26,11 +26,10 @@ public class Reduce {
     }
 
     public double getAverage() {
-        return arrayList.stream().reduce((a,b) -> a + b).get()/ (double) arrayList.size();
+        return arrayList.stream().mapToDouble(Integer::doubleValue).average().getAsDouble();
     }
 
     public double getOrderedMedian() {
-        double medianNumber;
         DoubleStream sortedNumber = arrayList.stream().mapToDouble(Integer::doubleValue).sorted();
 
         if (arrayList.size()%2 == 0)
@@ -55,7 +54,14 @@ public class Reduce {
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        int middleNumber = arrayList.size()/2;
+
+        if (arrayList.size()%2 == 0){
+            Double firstNum = new Double(singleLink.getNode(middleNumber).toString());
+            Double secondNum = new Double(singleLink.getNode(middleNumber+1).toString());
+            return ( firstNum + secondNum )/2;
+        } else
+            return new Double(singleLink.getNode(middleNumber +1).toString());
     }
 
     public int getLastOdd() {
